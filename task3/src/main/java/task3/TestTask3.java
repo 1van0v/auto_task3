@@ -20,8 +20,11 @@ public class TestTask3 extends BaseScript{
 	Category category = new Category(driver);
 	category.hoverOver();
 	category.clikcCategory();
-	
-	
+	category.addCategory();
+	category.addName();
+	category.submit();
+	category.fillSearchField();
+	category.filterCat();
 	
 	}
 
