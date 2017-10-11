@@ -2,6 +2,7 @@ package task3;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.io.File;
 
@@ -20,6 +21,16 @@ public abstract class BaseScript {
 		System.setProperty("webdriver.chrome.driver", 
 				new File(BaseScript.class.getResource(driverName).getFile()).getPath());
 		return new ChromeDriver();
+	}
+	
+	public static EventFiringWebDriver getConfDriver() {
+		WebDriver driver = getDriver();
+		driver.manage().window().maximize();
+		EventFiringWebDriver wrappedDriver = new EventFiringWebDriver(driver);
+		wrappedDriver.register(new EventCapture());
+		
+		return wrappedDriver;
+		
 	}
 
 }

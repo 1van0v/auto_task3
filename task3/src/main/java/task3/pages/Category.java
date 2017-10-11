@@ -22,6 +22,7 @@ public class Category {
 	private By catSave = By.id("category_form_submit_btn");
 	private By searchByName = By.name("categoryFilter_name");
 	private By filterBtn = By.id("submitFilterButtoncategory");
+	private By filteredCat = By.xpath("//*[@id=\"table-category\"]/tbody//td[3]");
 	
 	public Category(WebDriver driver) {
 		this.driver = driver;
@@ -64,5 +65,6 @@ public class Category {
 	
 	public void filterCat() {
 		driver.findElement(filterBtn).click();
+		wait.until(ExpectedConditions.textToBe(filteredCat, name));
 	}
 }
