@@ -26,6 +26,8 @@ public class TestTask3 extends BaseScript{
 	category.fillSearchField();
 	category.filterCat();
 	
+	driver.quit();
+	
 	}
 
 }
