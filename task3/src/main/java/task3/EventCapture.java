@@ -58,7 +58,7 @@ public class EventCapture implements WebDriverEventListener {
 
 	@Override
 	public void afterNavigateTo(String arg0, WebDriver arg1) {
-		System.out.println(arg0 + " was oppened");
+		System.out.println(arg0 + " was opened");
 		
 	}
 
